@@ -26,28 +26,30 @@ ingredients = {
 }
 
 def style(questions):
+  """Query user for flavor preferences"""
   prefs = {}
-  for domande in questions:
-    #raw_risposta = raw_input(questions[domande]+" ")
-    risposta = True if raw_input(questions[domande]+" ")[0].lower() == "y" else False
-    prefs[domande] = risposta
+  for entry in questions:
+    prefs[entry] = True if raw_input(questions[entry]+" ")[0].lower() == "y" else False
   return prefs
 
 def mixer(prefs):
+  """Build drink based upon user's flavor preferences"""
   # use random.choice to add ingredients to drink
   drink = []
   for choice in prefs:
-    print "{}: {}".format(choice,prefs[choice]) # debug
+    if prefs[choice] == True:
+      drink.append(random.choice(ingredients[choice]))
   return drink
 
 if __name__ == '__main__':
   print "Arrrrr!  Welcome to the Old Salt, matey!"
   print "Answer me questions and I'll bring ye a drink to quench yer thirst."
   print "If ye like the style, answer 'y' or 'yes' and it goes in yer drink."
-  # Call two functions (style and ingredients) in order
   prefs = style(questions)
   drink = mixer(prefs)
   # Prepare drink
+  for ing in drink[::1]:
+    print ing # debug
   
   # Extra challenges
   #  Name the drinks

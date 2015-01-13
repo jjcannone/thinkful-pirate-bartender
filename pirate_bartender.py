@@ -20,30 +20,33 @@ ingredients = {
     "strong": ["glug of rum", "slug of whisky", "splash of gin"],
     "salty": ["olive on a stick", "salt-dusted rim", "rasher of bacon"],
     "bitter": ["shake of bitters", "splash of tonic", "twist of lemon peel"],
-    "sour": ["chunk of grapefruit", "jigger of vinegar", "touch of lime juice"]
+    "sour": ["chunk of grapefruit", "jigger of vinegar", "touch of lime juice"],
     "sweet": ["sugar cube", "spoonful of honey", "splash of cola"],
     "fruity": ["slice of orange", "dash of cassis", "cherry on top"]
 }
 
-
-def style():
-  # iterate over questions
-  # build dictionary of responses
-  # accept "y" or "yes" as True; otherwise, False
-  # return new dict (prefs)
-  # hint: use raw_input() to help
+def style(questions):
   prefs = {}
+  for domande in questions:
+    #raw_risposta = raw_input(questions[domande]+" ")
+    risposta = True if raw_input(questions[domande]+" ")[0].lower() == "y" else False
+    prefs[domande] = risposta
   return prefs
 
 def mixer(prefs):
   # use random.choice to add ingredients to drink
   drink = []
+  for choice in prefs:
+    print "{}: {}".format(choice,prefs[choice]) # debug
   return drink
 
-
 if __name__ == '__main__':
+  print "Arrrrr!  Welcome to the Old Salt, matey!"
+  print "Answer me questions and I'll bring ye a drink to quench yer thirst."
+  print "If ye like the style, answer 'y' or 'yes' and it goes in yer drink."
   # Call two functions (style and ingredients) in order
-  prefs = style()
+  prefs = style(questions)
+  drink = mixer(prefs)
   # Prepare drink
   
   # Extra challenges

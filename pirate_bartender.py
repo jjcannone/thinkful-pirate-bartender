@@ -7,20 +7,21 @@ import random
 ## Print the name of a random Beatle
 #print random.choice(beatles)
 
-# Thinkful Default Questions
 questions = {
-    "strong": "Do ye like yer drinks strong?",
-    "salty": "Do ye like it with a salty tang?",
-    "bitter": "Are ye a lubber who likes it bitter?",
-    "sweet": "Would ye like a bit of sweetness with yer poison?",
-    "fruity": "Are ye one for a fruity finish?"
+  "strong": "Do ye like yer drinks strong, like the kraken?",
+  "salty": "How about a salty tang, to remind ye of the briny deep?",
+  "bitter": "Arrr ye a lubber what likes it bitter, as an old sea dog's harrrt?",
+  "sour": "Maybe a bit of sour, like me captain in the morn?",
+  "sweet": "Do ye take some sweetness with yer poison, me swabbie?",
+  "fruity": "Arrr ye one for a fruity finish?"
 }
 
 ingredients = {
     "strong": ["glug of rum", "slug of whisky", "splash of gin"],
     "salty": ["olive on a stick", "salt-dusted rim", "rasher of bacon"],
     "bitter": ["shake of bitters", "splash of tonic", "twist of lemon peel"],
-    "sweet": ["sugar cube", "spoonful of honey", "spash of cola"],
+    "sour": ["chunk of grapefruit", "jigger of vinegar", "touch of lime juice"]
+    "sweet": ["sugar cube", "spoonful of honey", "splash of cola"],
     "fruity": ["slice of orange", "dash of cassis", "cherry on top"]
 }
 

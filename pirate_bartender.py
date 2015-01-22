@@ -1,28 +1,23 @@
-#  13 January 2015:  raw, starting point -- content notes from assignment
+#  13 January 2015:  now somewhat mature, no extras or extensions
 
 import random
 
-# Sample random call
-#beatles = ["John", "Paul", "George", "Ringo"]
-## Print the name of a random Beatle
-#print random.choice(beatles)
-
 questions = {
   "strong": "Do ye like yer drinks strong, like the kraken?",
-  "salty": "How about a salty tang, to remind ye of the briny deep?",
+  "salty": "How about a salty tang, to remind ye o'the briny deep?",
   "bitter": "Arrr ye a lubber what likes it bitter, as an old sea dog's harrrt?",
-  "sour": "Maybe a bit of sour, like me captain in the morn?",
+  "sour": "Maybe a bit o'sour, like me captain in the morn?",
   "sweet": "Do ye take some sweetness with yer poison, me swabbie?",
-  "fruity": "Arrr ye one for a fruity finish?"
+  "fruity": "Arrr ye one fer a fruity finish?"
 }
 
 ingredients = {
-    "strong": ["glug of rum", "slug of whisky", "splash of gin"],
-    "salty": ["olive on a stick", "salt-dusted rim", "rasher of bacon"],
-    "bitter": ["shake of bitters", "splash of tonic", "twist of lemon peel"],
-    "sour": ["chunk of grapefruit", "jigger of vinegar", "touch of lime juice"],
-    "sweet": ["sugar cube", "spoonful of honey", "splash of cola"],
-    "fruity": ["slice of orange", "dash of cassis", "cherry on top"]
+    "strong": ["glug o'rum", "slug o'whisky", "splash o'gin"],
+    "salty": ["olive on a stick", "salt-dusted rim", "rasher o'bacon"],
+    "bitter": ["shake o'bitters", "splash o'tonic", "twist o'lemon peel"],
+    "sour": ["chunk o'grapefruit", "jigger o'vinegar", "touch o'lime juice"],
+    "sweet": ["sugar cube", "spoonful o'honey", "splash o'cola"],
+    "fruity": ["slice o'orange", "dash o'cassis", "cherry on top"]
 }
 
 def style(questions):
@@ -48,8 +43,16 @@ if __name__ == '__main__':
   prefs = style(questions)
   drink = mixer(prefs)
   # Prepare drink
-  for ing in drink[::1]:
-    print ing # debug
+  if len(drink) > 0:
+    ings = drink[0] 
+    for ing in drink[1:-1]:
+      print ing # debug
+      ings += ", " + ing
+    if len(drink) > 1:
+      ings += ", and " + drink[len(drink) -1]
+    print "Here's yer drink -- a pleasant mix o'{}".format(ings)
+  else:
+    print "Ye didna order anything?  Arrr ye scared of Old Pete?"
   
   # Extra challenges
   #  Name the drinks
